@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="abG-8I-pyZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TetriX View Controller-->
+        <scene sceneID="gh8-qD-j0o">
+            <objects>
+                <viewController id="abG-8I-pyZ" customClass="TetriXViewController" customModule="TetriX" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JiG-t4-c7v"/>
+                        <viewControllerLayoutGuide type="bottom" id="GlZ-3D-6XH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hIa-iT-82c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vQL-HR-E96">
+                                <rect key="frame" x="16" y="28" width="343" height="631"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ELf-iZ-Heh">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vet-AN-Hoy">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-Rz-9nz">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLq-pa-1m2" customClass="TetriXView" customModule="TetriX" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="20.5" width="343" height="610.5"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="MdI-i3-rh3" appends="YES" id="bjI-Fq-j1x"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vQL-HR-E96" firstAttribute="leading" secondItem="hIa-iT-82c" secondAttribute="leadingMargin" id="eMn-g9-sWo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vQL-HR-E96" secondAttribute="trailing" id="eY4-f2-Z8U"/>
+                            <constraint firstItem="vQL-HR-E96" firstAttribute="top" secondItem="JiG-t4-c7v" secondAttribute="bottom" constant="8" symbolic="YES" id="f88-kZ-yS8"/>
+                            <constraint firstItem="GlZ-3D-6XH" firstAttribute="top" secondItem="vQL-HR-E96" secondAttribute="bottom" constant="8" symbolic="YES" id="tQw-84-nH6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gamePanelView" destination="bLq-pa-1m2" id="19C-Gv-DSk"/>
+                        <outlet property="levelTextLabel" destination="aUk-Rz-9nz" id="i4v-aV-P15"/>
+                        <outlet property="scoreTextLabel" destination="vet-AN-Hoy" id="mjN-FT-4Vh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gum-CZ-hkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MdI-i3-rh3">
+                    <connections>
+                        <action selector="handleTap:" destination="abG-8I-pyZ" id="Ool-bo-vMR"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-84" y="120"/>
+        </scene>
+    </scenes>
+</document>
